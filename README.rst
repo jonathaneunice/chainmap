@@ -27,25 +27,23 @@
 
 
 This module is a `polyfill <https://en.wikipedia.org/wiki/Polyfill>`_,
-implementing ``ChainMap`` for reasonably-recent versions of Python
-that do not have ``collections.ChainMap``--namely, Python 2.6,
-Python 3.2, and PyPy3 releases based on Python 3.2. (It will also
-work as expected on Python 2.7, PyPy, and Python 3.3 and higher,
-but it is not needed there since those verions' ``collections``
-modules contains a ``ChainMap`` implementation.)
+implementing ``ChainMap`` for reasonably-recent versions of Python that do not
+have ``collections.ChainMap``--namely, Python 2.6, Python 3.2, and PyPy3
+releases based on Python 3.2. (It will also work as expected on Python 2.7,
+PyPy, and Python 3.3+, but it is not strictly needed there since those verions'
+``collections`` modules contains good ``ChainMap`` implementations.)
 
-The code for this package is closely derived from the Python 3.5
-source code at `hg.python.org <https://hg.python.org>`_, (especially
-the ``collections`` and ``reprlib`` modules). Several changes have
-been made to ensure Python 2.6 compatibility, and tests and packaging
-have been added.
+The code for this package is closely derived from the Python 3.5 source code,
+(especially the ``collections`` and ``reprlib`` modules). Several changes have
+been made to ensure Python 2.6 compatibility, and tests and packaging have been
+added.
 
 Typical usage::
 
     from chainmap import ChainMap
 
 If you prefer to preferentially import from the Python standard library when
-``ChainMap`` is available there, this will do the trick::
+``ChainMap`` is available there::
 
     try:
         from collections import ChainMap
@@ -55,13 +53,13 @@ If you prefer to preferentially import from the Python standard library when
 Please see `the standard documentation <https://docs.python.org/3/library/collections.html#collections.ChainMap>`_
 for details on how to use ``ChainMap``.
 
-If you're not sure *why* someone would use a ``ChainMap``, they are
-useful for managing "nested" contexts and "overlays." See e.g. my
-`options <https://pypi.python.org/pypi/options>`_, `quoter
+If you're not sure *why* someone would use a ``ChainMap``, they are useful for
+managing "nested" contexts and "overlays." See e.g. my `options
+<https://pypi.python.org/pypi/options>`_, `quoter
 <https://pypi.python.org/pypi/quoter>`_, and `say
-<https://pypi.python.org/pypi/say>`_ packages, which use them quite
-extensively for flexible option handling. You can find similar uses
-in the `Context class <https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Context>`_
+<https://pypi.python.org/pypi/say>`_ packages, which use them extensively for
+flexible option handling. You can find similar uses in the `Context class
+<https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Context>`_
 of Django's template engine.
 
 Notes
@@ -74,10 +72,10 @@ Notes
   `tox <http://pypi.python.org/pypi/tox>`_.
   Packaging linting with `pyroma <https://pypi.python.org/pypi/pyroma>`_.
 
-* Successfully packaged for, and tested against, all late-model
-  versions of Python: 2.6, 2.7, 3.2, 3.3,
-  3.4, and 3.5 as well as PyPy 2.6.1 (based on
-  2.7.10) and PyPy3 2.4.0 (based on 3.2.5).
+* Thanks to Travis CI, successfully packaged for, and tested against, all
+  reasonably late-model versions of Python: 2.6, 2.7, 3.2, 3.3, 3.4, 3.5, 3.6,
+  and 3.7, as well as PyPy 5.8.0 (essentially Python 2.7.13) and PyPy3 5.10.1
+  (corresponding to Python 3.5.3).
 
 * The author, `Jonathan Eunice <mailto:jonathan.eunice@gmail.com>`_ or
   `@jeunice on Twitter <http://twitter.com/jeunice>`_
