@@ -1,0 +1,6 @@
+include README.rst
+include CHANGES.yml
+include pytest.ini
+include tox.ini
+recursive-include test *.py
+include toxcov.ini
